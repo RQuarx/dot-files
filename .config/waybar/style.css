@@ -1,0 +1,239 @@
+* {
+    font-family: "OpenSans, System ui, JetBrainsMono Nerd Font";
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: #0e0e0e;
+    background: #0e0e0e;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 2px;
+    transition-property: background-color;
+    transition-duration: .5s;
+
+    border-radius: 0px 0px 10px 10px;
+    border-color: #00ffff;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+}
+
+tooltip {
+    background: rgba(14, 14, 14, 0.7);
+    border-radius: 15px 15px 15px 15px;
+    border-color: #00ffff;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+
+tooltip label {
+    color: #ffffff;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0px 1px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 5px 5px 0px 0px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0px -2px #00ffff;
+}
+
+/*
+    * LEFT
+*/
+
+#workspaces {
+    margin-left: 10px;
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: #2d2f3a;
+    border-radius: 15px 5px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+}
+
+#workspaces button {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+#workspaces button.persistent {
+    color: #777;
+}
+
+#workspaces button.empty {
+    color: #777;
+}
+
+#workspaces button.active {
+    color: #fff;
+}
+
+#workspaces button:hover {
+    background-color: #4b4f61;
+}
+
+#tray {
+    background: #2d2f3a;
+    margin-left: 5px;
+    padding-left: 15px;
+    border-radius: 5px 0px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+}
+
+#tray menu {
+    background: rgba(14, 14, 14, 0.7);
+    border-radius: 15px 15px 15px 15px;
+    border-color: #00ffff;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+
+#taskbar {
+    background: #2d2f3a;
+    padding-left: 15px;
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+}
+
+#taskbar button:hover {
+    background: #4b4f61;
+}
+
+#custom-separator {
+    background: #2d2f3a;
+    padding-left: 7px;
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+}
+
+#window {
+    font-weight: bold;
+    background: #2d2f3a;
+    padding-left: 3px;
+    padding-right: 15px;
+    border-radius: 0px 15px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+}
+
+/*
+    * CENTER
+*/
+
+#custom-weather {
+    box-shadow: inset 0px -1px #00ffff;
+    border-width: 1px 0px 0px 1px;
+    border-style: solid;
+    border-radius: 15px 0px 0px 0px;
+    border-color: #00ffff;
+    padding-right: 16px;
+    padding-left: 16px;
+    transition: none;
+    color: #ffffff;
+    background: transparent;
+}
+
+#mpris {
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: #00ffff;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: none;
+    background: transparent;
+    color: #ffffff;
+}
+
+#mpris:hover {
+    transition-property: background-color;
+    transition-duration: .5s;
+    background: #444444;
+    box-shadow: inset 0px -2px #00ffff;
+}
+
+#clock {
+    box-shadow: inset 0px -1px #00ffff;
+    border-width: 1px 1px 0px 0px;
+    border-style: solid;
+    border-color: #00ffff;
+    border-radius: 0px 15px 0px 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: none;
+    background: transparent;
+    color: #ffffff;
+}
+
+/*
+    * RIGHT
+*/
+
+#temperature {
+    margin-right: 5px;
+    color: #0e0e0e;
+    background: #009900;
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 15px 5px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+}
+
+#temperatur.critical {
+    background: #990000;
+    color: #ffffff;
+}
+
+#network {
+    padding-right: 7px;
+    padding-left: 7px;
+    background: #2d2f3a;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+#pulseaudio {
+    padding-right: 7px;
+    padding-left: 7px;
+    background: #2d2f3a;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+#memory {
+    background: #2d2f3a;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: inset 0px -1px #00ffff;
+    padding-right: 7px;
+    padding-left: 7px;
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+#battery {
+    box-shadow: inset 0px -1px #00ffff;
+    margin-right: 10px;
+    background: #009900;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: #0e0e0e;
+    border-radius: 5px 15px 0px 0px;
+}
+
+#battery.discharging.warning {
+    background: #999900;
+}
+
+#battery.discharging.critical {
+    background: #990000;
+    color: #ffffff;
+}

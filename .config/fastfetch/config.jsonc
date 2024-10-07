@@ -1,0 +1,92 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "separator": "   ",
+    "color": {
+      "separator": "white",
+      "output": "bright_",
+      "keys": "cyan"
+    }
+  },
+  "general": {
+    "multithreading": true
+  },
+  "logo": {
+    "type": "small",
+    "padding": {
+      "top": 4,
+      "left": 2,
+      "right": 5
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "    {6}{7}{8}"
+    },
+    "break",
+    {
+      "key": "{#bright_white}╭{#36}󰣇  OS        ",
+      "keyColor": "cyan",
+      "type": "os",
+      "outputColor": "bright_cyan",
+      "format": "{3} {10}"
+    },
+    {
+      "key": "{#bright_white}│   {#bright_cyan}│├─{#dim_cyan}󰌢 Machine",
+      "type": "host",
+      "format": "{2}"
+    },
+    {
+      "key": "{#bright_white}│   {#bright_cyan}│╰─{#dim_cyan} Kernel ",
+      "type": "kernel",
+      "format": "{1} {2}"
+    },
+    {
+      "key": "{#bright_white}│   {#bright_cyan}├─{#dim_cyan}󰻠 CPU     ",
+      "type": "cpu",
+      "format": "{1}"
+    },
+    {
+      "key": "{#bright_white}│   {#bright_cyan}├─{#dim_cyan}󰍛 GPU     ",
+      "type": "gpu",
+      "hideType": "integrated",
+      "format": "{1} {2}"
+    },
+    {
+      "key": "{#bright_white}│   {#bright_cyan}╰─{#dim_cyan} Battery ",
+      "type": "battery",
+      "temp": true,
+      "useSetupApi": true,
+      "format": "{10}{4} [{5}]  {8}"
+    },
+    {
+      "type": "custom",
+      "outputColor": "bright_white",
+      "format": "┴"
+    },
+    {
+      "key": "  Terminal   ",
+      "type": "terminal",
+      "outputColor": "bright_cyan",
+      "keyColor": "cyan"
+    },
+    {
+      "key": "    {#bright_cyan}├─{#dim_cyan} Shell   ",
+      "type": "shell"
+    },
+    {
+      "key": "    {#bright_cyan}├─{#dim_cyan} WM      ",
+      "type": "wm"
+    },
+    {
+      "key": "    {#bright_cyan}├─{#dim_cyan}󰇄 DE      ",
+      "type": "de"
+    },
+    {
+      "key": "    {#bright_cyan}╰─{#dim_cyan} Packages",
+      "type": "packages"
+    },
+    "break"
+  ]
+}
