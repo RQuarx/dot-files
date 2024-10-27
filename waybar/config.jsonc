@@ -1,0 +1,138 @@
+{
+    "custom/open": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "custom/close": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+
+    "modules-left": ["custom/updates", "wlr/taskbar", "hyprland/workspaces"],
+    "modules-center": ["custom/open", "custom/weather", "mpris", "clock", "custom/close"],
+    "modules-right": ["network", "tray", "pulseaudio", "battery"],
+
+
+
+    "custom/updates": {
+        "format": "{icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "!",
+            "updated": ""
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "α",
+            "2": "β",
+            "3": "γ",
+            "4": "δ",
+            "5": "ε"
+        },
+
+        "persistent-workspaces": {
+            "*": 5
+        },
+
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": ["Alacritty", "kitty", "zoom", "zoom workplace"]
+    },
+
+
+
+    "custom/weather": {
+        "exec": "python ~/.config/waybar/scripts/weather/weather.py",
+        "restart-interval": 60,
+        "return-type": "json",
+        "on-click": "xdg-open https://weather.com/en-EN/weather/today/l/$(location_id)"
+        // "format-alt": "{alt}",
+    },
+
+    "clock": {
+        "interval": 60,
+        "tooltip": false,
+        "format": "{:%a %e %b %I:%M %p}",
+        "on-click": "ags -t calendar"
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "mpris": {
+        "format": "{title}",
+        "title-len": 25,
+        "format-paused": "{status_icon} <i>{title}</i>",
+        "status-icons": {
+            "paused": " ",
+            "playing": " ",
+            "stopped": " "
+        },
+        "ignored-players": ["Vivaldi", "zoom", "Mozilla Firefox"]
+    },
+
+
+   
+    "network": {
+        "interface": "wlan0",
+        "format": "    {essid}",
+        "format-disconnected": "Disconnected", //An empty format will hide the module.
+        "tooltip-format": "{signalStrength}%",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 1,
+        "max-length": 25
+    },
+
+    "pulseaudio": {
+        "format": "{icon}   {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": "   muted",
+        "format-muted": "   muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pavucontrol",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "battery": {
+        "interval": 1,
+        "states": {
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "{icon}   {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25,
+        "tooltip": false
+    }
+}

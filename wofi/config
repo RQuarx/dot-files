@@ -1,0 +1,17 @@
+show=drun
+width=400px
+height=370px
+prompt=Search
+normal_window=false
+location=center
+gtk-dark=true
+allow_images=true
+image_size=20
+insensitive=true
+allow_markup=true
+no_actions=true
+orientation=vertical
+hide_scroll=true
+content_halign=fill
+sort_order=default
+matching=fuzzy
